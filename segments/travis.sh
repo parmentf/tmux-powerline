@@ -26,7 +26,11 @@ run_segment() {
         repository=$(git config --get remote.origin.url)
         out=$(${TMUX_POWERLINE_DIR_SEGMENTS}/travis.py ${repository} ${branch})
         if [[ -n $out ]]; then
-            echo "⛑  $out"
+			if [[ $out == "Success" ]]; then
+            	echo "#[fg=colour10] ⛑  $out"
+			else
+				echo "#[fg=colour197] ⛑  $out"
+			fi
         fi
 	fi
 	return 0
