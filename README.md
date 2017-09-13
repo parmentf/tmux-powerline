@@ -125,6 +125,11 @@ bind C-[ run '~/path/to/tmux-powerline/mute_powerline.sh left'		# Mute left stat
 bind C-] run '~/path/to/tmux-powerline/mute_powerline.sh right'		# Mute right statusbar.
 ```
 
+You can set tmux by default in your `.bashrc` at user's home : 
+```bash
+[[ $TERM != "screen" ]] && exec tmux
+```
+
 ## For tmux versions < 2.1
 
 Some segments e.g. cwd and cvs_branch needs to find the current working directory of the active pane. To achieve this we let tmux save the path each time the shell prompt is displayed. Put the line below in your `~/.bashrc` or where you define you PS1 variable. zsh users can put it in e.g. `~/.zshrc` and may change `PS1` to `PROMPT` (but that's not necessary).
