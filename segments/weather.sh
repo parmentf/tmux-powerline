@@ -12,6 +12,7 @@ else
 	TMUX_POWERLINE_SEG_WEATHER_GREP_DEFAULT="grep"
 fi
 
+export TMUX_POWERLINE_SEG_WEATHER_LOCATION="613836"
 
 generate_segmentrc() {
 	read -d '' rccontents  << EORC
@@ -28,7 +29,7 @@ export TMUX_POWERLINE_SEG_WEATHER_GREP="${TMUX_POWERLINE_SEG_WEATHER_GREP_DEFAUL
 # 1. Go to Yahoo weather http://weather.yahoo.com/
 # 2. Find the weather for you location
 # 3. Copy the last numbers in that URL. e.g. "http://weather.yahoo.com/united-states/california/newport-beach-12796587/" has the numbers "12796587"
-export TMUX_POWERLINE_SEG_WEATHER_LOCATION=""
+export TMUX_POWERLINE_SEG_WEATHER_LOCATION="613836"
 EORC
 	echo "$rccontents"
 }
@@ -61,6 +62,7 @@ __process_settings() {
 	if [ -z "$TMUX_POWERLINE_SEG_WEATHER_GREP" ]; then
 		export TMUX_POWERLINE_SEG_WEATHER_GREP="${TMUX_POWERLINE_SEG_WEATHER_GREP_DEFAULT}"
 	fi
+	#echo "coucou $TMUX_POWERLINE_SEG_WEATHER_LOCATION"
 	if [ -z "$TMUX_POWERLINE_SEG_WEATHER_LOCATION" ]; then
 		echo "No weather location specified.";
 		exit 8
