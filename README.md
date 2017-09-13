@@ -67,6 +67,7 @@ Requirements for some segments. You only need to fulfill the requirements for th
 * `tmux_mem_cpu_load.sh`: [tmux-mem-cpu-load](https://github.com/thewtex/tmux-mem-cpu-load)
 * `rainbarf.sh`: [rainbarf](https://github.com/creaktive/rainbarf)
 * `weather.sh`: GNU `grep` with Perl regexp enabled (FreeBSD specific)
+* `travis.sh`: python [requests package ](http://docs.python-requests.org/en/master/)
 
 ## OS X specific requirements
 
