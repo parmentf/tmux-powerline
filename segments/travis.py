@@ -5,7 +5,8 @@ import re
 from xml.dom import minidom
 
 def main(argv):
-    repository1 = re.search('(\/\w+\/\D+)$', sys.argv[1])
+    
+    repository1 = re.search('\D+\w+\.\w+(\D+\/\D+[^\.^git])$', sys.argv[1])
     repository2 = re.search('^([^\/]+)\/?(.*)(\/\D+\/\D+)(.git)$', sys.argv[1])
     repository = ""
 
@@ -14,7 +15,6 @@ def main(argv):
     elif not repository1 and repository2:
         repository = repository2.group(3)
 
-    # print(repository)
     request = requests.get("https://api.travis-ci.org/repositories" + repository + ".xml?branch=" + sys.argv[2])
     if request.status_code != 200:
         return 0
