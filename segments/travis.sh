@@ -27,9 +27,9 @@ run_segment() {
         out=$(${TMUX_POWERLINE_DIR_SEGMENTS}/travis.py ${repository} ${branch})
         if [[ -n $out ]]; then
 			if [[ $out == "Success" ]]; then
-            	echo "#[fg=colour10] ⛑  $out"
+				echo "#[fg=colour10]⛑  $out"
 			else
-				echo "#[fg=colour197] ⛑  $out"
+				echo "#[fg=colour197]⛑  $out"
 			fi
         fi
 	fi
